@@ -1,9 +1,10 @@
-FROM debian:9
+FROM openclassrooms/build-image
 
 RUN apt-get update -yq \
 && apt-get install curl gnupg -yq \
 && curl -SL https://deb.nodesource.com/setup_10.x | bash \
 && apt-get install nodejs -yq \
+&& apt-get install -y \ nginx
 && apt-get clean -y
 
 ADD. /app/ 
